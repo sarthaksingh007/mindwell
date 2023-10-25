@@ -1,0 +1,29 @@
+.home{
+    margin: 7.5rem 0 9.5rem 0;
+    display: flex;
+    justify-content: space-around;
+    >main{
+
+    }
+    >article{
+        margin: 3.7rem 5rem 0 0;
+        >h2{
+            font-size: 3rem;
+            color: #636363;
+        }
+        >span{
+            color: #946ef5;
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        >.headbtn{
+            background-color: #946ef5;
+            color: white;
+            padding: 1.2rem 2rem 1.2rem 2rem;
+            font:600 1.2rem "Roboto";
+            letter-spacing: 3px;
+            border-radius: 3rem;
+            margin: 2rem 0 0 0;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.faq{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10rem;
+    padding: 0 7rem 0 7rem;
+    >main{
+        >.styles_faq-row-wrapper__3vA1D >.styles_faq-row__2YF3c {
+            display: flex;
+            justify-content: space-around;
+            // padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        >.styles_faq-row-wrapper__3vA1D h2 {
+            margin: 0;
+            color: #7747f1 !important;
+            font-size: var(--title-text-size, 40px);
+            margin-bottom: 1.5rem;
+        }
+    }
+}

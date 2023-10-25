@@ -1,0 +1,61 @@
+.App{
+    display: flex;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: #bbbebc;
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+}
+.quoteBox{
+    position: relative;
+    top: 50%;
+    border-radius: 10px 10px 10px 10px;
+    object-fit: cover;
+    margin: auto;
+    color:blacks ;
+    background-color: aliceblue;
+    opacity: 0.7 !important;
+    width: 50%;
+    padding: 2rem;
+}
+.quoteButton{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+button{
+    background-color: #946ef5;
+    border-radius: 28px;
+    border: 1px solid #946ef5;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    letter-spacing: 3px;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 10px 15px 10px 15px;
+    text-decoration: none;
+   border: 3px solid #946ef5;
+   transition: ease 0.3s !important;
+}
+
+button:hover{
+    background-color: white;
+    border: 3px solid #946ef5;
+    color: #946ef5;
+}
+
+button:active{
+    position: relative;
+    top: 1px;
+}
+
+.quote{
+    margin: 1em;
+    z-index: 1;
+}
+.author{
+    float: right;
+    margin: 1em;
+}

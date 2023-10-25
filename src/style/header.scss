@@ -1,0 +1,33 @@
+nav {
+  margin-left: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-color: #dfdbdb;
+  border-bottom-width: 3px;
+  margin: 1rem 3rem 0 3rem;
+  > div {
+    > img {
+    width: 80%;
+    }
+  }
+  > div {
+    > a {
+      margin: 0 13px 0 15px;
+      font: 500 20px "Roboto";
+      color: #939393 !important;
+      > svg {
+        font-size: 32px;
+        color: #7745f6;
+        position: relative;
+        bottom: -8px;
+      }
+    }
+    > .vl {
+      margin: 3px;
+      border-left: 3px solid #ada5c3;
+      height: 50px;
+    }
+  }
+}

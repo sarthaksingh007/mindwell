@@ -1,0 +1,114 @@
+.signup{
+    margin: 8rem;
+    > main {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 20px 20px 20px 20px;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+  
+      > .loginsvg {
+        border-radius: 0px 20px 20px 0px;
+        padding: 2.5rem;
+        width: 40%;
+        > img {
+          width: 100%;
+          margin-top: 2.5rem;
+        }
+        > p {
+          color: white;
+          font-size: 1rem;
+          text-align: justify;
+        }
+        background-color: #946ef5;
+      }
+      > .signupdetail {
+        padding: 2rem 2rem 2rem 7.5rem;
+        > a {
+          color: #9f9b9b;
+          margin-bottom: 2rem;
+          font-size: 1rem;
+          text-align: center;
+        }
+        > .forgot {
+          > a {
+            color: #9f9b9b;
+            font-size: 1rem;
+            text-align: center;
+          }
+          > hr {
+            margin-top: 0.7rem;
+            width: 50%;
+            border: 3px solid #946ef5;
+            position: relative;
+            left: 90px;
+          }
+        }
+        > h1 {
+          text-transform: uppercase;
+          color: #946ef5;
+          font: 600 4.7rem "Lato";
+          text-align: center;
+        }
+        > p {
+          color: #9f9b9b;
+          text-align: center;
+          font: 500 1.4rem "Lato";
+          margin: 1rem 0 1rem 0;
+        }
+        > form {
+          > .bottom-border-input {
+            width: 90%;
+            border: none;
+            border-bottom: 4px solid #ccc;
+            border-radius: 0.3rem;
+            padding: 10px 10px 10px 16px;
+            outline: none;
+            transition: border-bottom 0.2s ease;
+            color: grey;
+            font-size: 19px;
+            margin-bottom: 1rem;
+          }
+  
+          > .bottom-border-input:focus {
+            border-bottom: 4px solid#946ef5;
+            border-radius: 0.3rem;
+          }
+  
+          > .bottom-border-input:focus + label {
+            top: -20px;
+            font-size: 15px;
+            color: #946ef5;
+            color: #ccc;
+          }
+        }
+        border-radius: 0 1rem 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        > form {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          > .loginbtn {
+            background-color: #946ef5;
+            border-radius: 30px;
+            border: 1px solid #946ef5;
+            display: inline-block;
+            cursor: pointer;
+            color: white;
+            letter-spacing: 3px;
+            font-family: Arial;
+            font-size: 21px;
+            text-decoration: none;
+            width: 50%;
+            padding: 7px 0 7px 0;
+            margin-top: 0px;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,112 @@
+.footerSection {
+  padding: 2rem 3rem 2rem 2rem;
+  background-color: #beaceb;
+  > .right {
+    > p {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      color: #636363;
+    }
+  }
+  > hr {
+    border: 2.5px solid #946ef5;
+    width: 80%;
+    position: relative;
+    right: -140px;
+    margin: 20px 0 20px 0;
+  }
+  > article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-bottom: 1rem;
+
+    > .Foot3 {
+      border-radius: 10px;
+      margin-right: 10px;
+      > h1 {
+        margin-bottom: 1.5rem;
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        color: #636363;
+        > span {
+          color: #946ef5;
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+        text-align: center;
+      }
+      > .details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > h4 {
+          display: flex;
+          align-items: center;
+          margin: 0 0 1.5rem 0;
+          color: black;
+          > svg {
+            margin-right: 5px ;
+            color: #946ef5 !important;
+          }
+        }
+      }
+    }
+
+    > .Foot2 {
+      > h3 {
+        font-size: 1.5rem;
+        margin: 10px 0 10px 0;
+      }
+      > hr {
+        border: 2px solid #946ef5;
+        width: 107%;
+        position: relative;
+        right: 0px;
+        margin: 7px 0 12px 0;
+      }
+      display: flex;
+      flex-direction: column;
+
+      > a {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+    }
+
+    > .Foot1 {
+      margin-left: 50px;
+
+      > img {
+        width: 60%;
+      }
+
+      > p {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        width: 75%;
+        font-size: 1.2rem;
+        color: #636363;
+      }
+
+      > .footerlinks {
+        margin-top: 1rem;
+
+        > a {
+          margin: 0.5rem 1.2rem 0 0;
+          font-size: 1.5rem;
+          transition: ease 0.3s;
+          > svg {
+            font-size: 1.8rem;
+          }
+          &:hover {
+            color: #946ef5;
+          }
+        }
+      }
+    }
+  }
+}

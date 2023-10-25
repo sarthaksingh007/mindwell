@@ -1,0 +1,37 @@
+.services {
+    padding: 2rem 0 0 0;
+  > article {
+    margin-bottom: 6rem;
+    > h2 {
+      font-size: 2.5rem;
+      color: #636363;
+      > span {
+        color: #946ef5;
+        font-size: 3rem;
+        font-weight: 700;
+      }
+      text-align: center;
+    }
+  }
+  margin-bottom: 8rem;
+  > main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    > .contain {
+      > svg {
+        color: #7649ec;
+        font-size: 3.5rem;
+        position: relative;
+        margin-bottom: 2rem;
+        right: -60px;
+      }
+      > h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #959595;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

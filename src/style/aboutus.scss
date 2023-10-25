@@ -1,0 +1,52 @@
+.aboutus{
+    margin-top: 3rem;
+    >main{
+        display: flex;
+        flex-direction: column;
+        > h2 {
+            font-size: 3rem;
+            color: #636363;
+            margin-bottom: 3rem;
+            > span {
+              color: #946ef5;
+              font-size: 3rem;
+              font-weight: 700;
+            }
+            text-align: center;
+          }
+        >.about1{
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: row;
+            >.imagesection1{
+                >img{
+                    width: 32rem;
+                    margin-right: 7rem;
+                }
+            }
+            >.aboutpara1{
+                padding: 3rem 14rem 7rem 11rem;
+                letter-spacing: 2px;
+                line-height: 2rem !important;
+                text-align: justify;
+                font: 400 1rem "Roboto";
+            }
+        }
+        >.about2{
+            display: flex;
+            >.imagesection2{
+                >img{
+                    width:35rem;
+                    margin-right: 3rem;
+                }
+            }
+            >.aboutpara2{
+                padding: 3rem 7rem 7rem 7rem;
+                letter-spacing: 2px;
+                line-height: 2rem !important;
+                text-align: justify;
+                font: 400 1rem "Roboto";
+            }
+        }
+    }
+}
