@@ -1,6 +1,6 @@
 import React from "react";
 import About1 from "../asset/about1.svg";
-import Abouts from "../asset/about.webp";
+// import Abouts from "../asset/about.webp";
 const About = () => {
   return (
     <section className="aboutus">

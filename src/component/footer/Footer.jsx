@@ -12,16 +12,16 @@ const Footer = () => {
           <img src={logo} alt="" />
           <p>Elevate Your Mental Well-being with Mindwell</p>
           <div className="footerlinks">
-            <a href="">
+            <a href="dfsbfdsf">
               <FaInstagram />
             </a>
-            <a href="">
+            <a href="fdsfsfs">
               <FaFacebook />
             </a>
-            <a href="">
+            <a href="sfdsfsfs">
               <FaTwitter />
             </a>
-            <a href="">
+            <a href="fdsfssd">
               <FaYoutube />
             </a>
           </div>
@@ -29,9 +29,9 @@ const Footer = () => {
         <div className="Foot2">
           <h3>UseFul Links</h3>
           <hr />
-          <a href="">About Us</a>
-          <a href="">Services</a>
-          <a href="">LogIn/SignUp</a>
+          <a href="fdsfs">About Us</a>
+          <a href="sdffs">Services</a>
+          <a href="fdsfs">LogIn/SignUp</a>
         </div>
         <div className="Foot3">
           <h1>

@@ -5,7 +5,7 @@ import Aboutus from "../About"
 import Services from "../services/Services"
 import FAQ from "../faq/Faq"
 import Contactus from "../contact/Contact"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
