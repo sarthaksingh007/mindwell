@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
@@ -9,7 +9,7 @@ import Good from "../../asset/good.png";
 import Okay from "../../asset/okay.png";
 import NotGreat from "../../asset/notgreat.png";
 import Overwhelmed from "../../asset/overwhelmed.png";
-import {useNavigate} from "react-router-dom"
+// import {useNavigate} from "react-router-dom"
 import "../../style/radio.css";
 
 const style = {
@@ -31,37 +31,37 @@ const Choice = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-const navigate = useNavigate()
-  const [formData, setFormData] = useState({
-    mood: "",
-    topic: "",
-  });
-  const handleMoodTopic = async (e) => {
-    e.preventDefault();
-    console.log("Users", formData.mood, formData.topic);
-    try {
-      let result = await fetch("http://localhost:5000/getmoodandtopic", {
-        method: "post",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include", // added the session
-      });
-      result = await result.json();
-      console.log(result);
-      navigate('/user');
-    } catch (error) {
-      console.error(error); //only print the error
-    }
-  };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+// const navigate = useNavigate()
+  // const [formData, setFormData] = useState({
+  //   mood: "",
+  //   topic: "",
+  // });
+  // const handleMoodTopic = async (e) => {
+  //   e.preventDefault();
+  //   console.log("Users", formData.mood, formData.topic);
+  //   try {
+  //     let result = await fetch("http://localhost:5000/getmoodandtopic", {
+  //       method: "post",
+  //       body: JSON.stringify(formData),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       credentials: "include", // added the session
+  //     });
+  //     result = await result.json();
+  //     console.log(result);
+  //     navigate('/user');
+  //   } catch (error) {
+  //     console.error(error); //only print the error
+  //   }
+  // };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value,
+  //   });
+  // };
   return (
     <div>
       <div className="1">
@@ -249,7 +249,7 @@ const navigate = useNavigate()
           Are you ready
         </button> */}
         <div>
-      <Button onClick={handleOpen}><button type="submit" onClick={(e) => handleMoodTopic(e)}>
+      <Button onClick={handleOpen}><button type="submit">
           Are you ready
         </button></Button>
       <Modal

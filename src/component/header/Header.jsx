@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {FaUserCircle} from "react-icons/fa"
-import logo1 from "../../asset/headersvg.svg"
+import logo1 from "../../asset/headersvg.svg";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 const Header = () => {
-  const auth=localStorage.getItem('user');
+  const [auth, setAuth] = useState(false);
+  const navigate=useNavigate();
+  
+  useEffect(() => {
+    const user = localStorage.getItem('user');
+    if (user) {
+      setAuth(true);
+    } else {
+      setAuth(false);
+    }
+  }, []);
+
+  const onlogout = () => {
+    localStorage.clear();
+    setAuth(false);
+    navigate('/')
+  };
+
   return (
     <nav>
       <motion.div
@@ -16,18 +34,19 @@ const Header = () => {
       >
         <img src={logo1} alt="logo" />
       </motion.div>
-      <div className="navvy" style={{marginBottom: "25px"}}>
+      <div className="navvy" style={{ marginBottom: "25px" }}>
         <Link to="">Home</Link>
         <Link to="">About Us</Link>
         <Link to="">FAQ</Link>
         <Link className="vl"></Link>
-        {
-          auth?
-          <Link to="/logout">Logout</Link>
-          :
+        {auth ? 
+        (
+          <button onClick={onlogout}>Logout</button>
+        ) 
+        : 
+        (
           <Link to="/login">Login</Link>
-        }
-        
+        )}
       </div>
     </nav>
   );
