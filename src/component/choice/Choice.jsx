@@ -25,6 +25,16 @@ const style = {
 };
 
 const Choice = () => {
+  const [isChecked, setIsChecked] = useState(false);
+  console.log(isChecked);
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+  const handleBothClicks = (e) => {
+    handleMoodTopic(e);
+    handleOpen();
+  };
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -248,11 +258,7 @@ const Choice = () => {
           Are you ready
         </button> */}
         <div>
-          <button
-            type="submit"
-            onClick={(e) => handleMoodTopic(e)}
-            onClick={handleOpen}
-          >
+          <button type="submit" onClick={handleBothClicks}>
             Are you ready
           </button>
           <Modal
@@ -267,23 +273,64 @@ const Choice = () => {
                 id="keep-mounted-modal-title"
                 variant="h6"
                 component="h1"
+                style={{
+                  color: "#946ef5",
+                  fontSize: "2.2rem",
+                  fontWeight: "900",
+                }}
               >
                 Disclaimer
               </Typography>
-              <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
+              <Typography
+                style={{ color: "#636363" }}
+                id="keep-mounted-modal-description"
+                sx={{ mt: 2 }}
+              >
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Ratione enim fuga tempore earum harum vel numquam delectus vitae
                 voluptate dignissimos!
                 <br />
-                <input type="checkbox" name="" id="" />
+                <div class="checkbox-wrapper-12">
+                  <div class="cbx">
+                    <input
+                      id="cbx-12"
+                      type="checkbox"
+                      checked={isChecked}
+                      onChange={handleCheckboxChange}
+                    />
+                    <label for="cbx-12"></label>
+                    <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
+                      <path d="M2 8.36364L6.23077 12L13 2"></path>
+                    </svg>
+                  </div>
+                  {/* <!-- Gooey--> */}
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                      <filter id="goo-12">
+                        <fegaussianblur
+                          in="SourceGraphic"
+                          stddeviation="4"
+                          result="blur"
+                        ></fegaussianblur>
+                        <fecolormatrix
+                          in="blur"
+                          mode="matrix"
+                          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7"
+                          result="goo-12"
+                        ></fecolormatrix>
+                        <feblend in="SourceGraphic" in2="goo-12"></feblend>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
                 <br />
                 <button
-            type="submit"
-            onClick={(e) => handleMoodTopic(e)}
-          >
-            Are you ready
-          </button>
-                
+                  type="submit"
+                  disabled={!isChecked}
+                  onClick={(e) => handleMoodTopic(e)}
+                >
+                  Lets chat
+                </button>
               </Typography>
             </Box>
           </Modal>
