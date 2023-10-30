@@ -8,7 +8,7 @@ const Choice = () => {
     if (auth == null) {
       navigate("/");
     }
-  }, []);
+  }, [auth,navigate]);
 
   const [formData, setFormData] = useState({
     mood: "",

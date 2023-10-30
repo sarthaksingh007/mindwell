@@ -1,34 +1,34 @@
-import React,{useState,useEffect}from "react";
+import React from "react";
 import { FiSearch } from "react-icons/fi";
 import {BsThreeDotsVertical} from "react-icons/bs"
 
 const User = () => {
-  const [users, setusers] = useState([]);
+  // const [users, setusers] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/getOnlineUser', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          credentials: 'include' // For sending cookies (if needed)
-        });
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch('/getOnlineUser', {
+  //         method: 'GET',
+  //         headers: {
+  //           'Content-Type': 'application/json'
+  //         },
+  //         credentials: 'include' // For sending cookies (if needed)
+  //       });
 
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
 
-        const data = await response.json();
-        setusers(data);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
+  //       const data = await response.json();
+  //       setusers(data);
+  //     } catch (error) {
+  //       console.error('Error:', error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
   return (
     <section className="user">
       <div className="history">
