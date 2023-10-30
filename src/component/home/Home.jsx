@@ -1,10 +1,10 @@
 import React from "react";
 import Homeimg from "../../asset/mindwell.svg";
 import Qoute from "../Quote"
-import Aboutus from "../About"
+import Aboutus from "../about/About"
 import Services from "../services/Services"
 import FAQ from "../faq/Faq"
-import Contactus from "../contact/Contact"
+import Contactus from "../contactUsPage/Contact"
 // import { Link } from "react-router-dom";
 const Home = () => {
   return (
@@ -17,7 +17,7 @@ const Home = () => {
         <h2>Your</h2>
         <span>Feel Better</span>
         <h2>Platform</h2>
-        <button  className="headbtn">FIND STRANGER</button>
+        <button className="headbtn">FIND COUNSELLOR</button>
       </article>
     </section>
     <Qoute/>

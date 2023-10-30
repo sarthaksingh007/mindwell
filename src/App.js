@@ -4,11 +4,9 @@ import Footer from './component/footer/Footer'
 import Header from './component/header/Header'
 import Home from './component/home/Home'
 import Login from './component/login/Login';
-import Chat from './component/chat/Chat';
 import Choice from './component/choice/Choice';
 import User from './component/User/User';
 import SignUp from './component/signup/SignUp';
-
 
 import "./style/footer1.scss"
 import "./style/app.scss"
@@ -32,7 +30,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/chat" element={<Chat />} />
           <Route path='/user' element={<User/>}/>
           <Route path='/signup' element={<SignUp/>}/>
           <Route path='/choice' element={<Choice/>}/>

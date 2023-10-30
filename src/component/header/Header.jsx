@@ -23,9 +23,9 @@ const Header = () => {
         <Link className="vl"></Link>
         {
           auth?
-          <Link to="/login">Login</Link>
+          <Link to="/logout">Logout</Link>
           :
-          <Link to="/login"><FaUserCircle/></Link>
+          <Link to="/login">Login</Link>
         }
         
       </div>

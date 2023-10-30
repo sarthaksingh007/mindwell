@@ -9,6 +9,7 @@ import Good from "../../asset/good.png";
 import Okay from "../../asset/okay.png";
 import NotGreat from "../../asset/notgreat.png";
 import Overwhelmed from "../../asset/overwhelmed.png";
+import {useNavigate} from "react-router-dom"
 import "../../style/radio.css";
 
 const style = {
@@ -30,7 +31,7 @@ const Choice = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+const navigate = useNavigate()
   const [formData, setFormData] = useState({
     mood: "",
     topic: "",
@@ -49,6 +50,7 @@ const Choice = () => {
       });
       result = await result.json();
       console.log(result);
+      navigate('/user');
     } catch (error) {
       console.error(error); //only print the error
     }
@@ -259,7 +261,7 @@ const Choice = () => {
       >
         <Box sx={style}>
           <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
-            Text in a modal
+           
           </Typography>
           <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
