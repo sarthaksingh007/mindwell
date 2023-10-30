@@ -22,7 +22,6 @@ import "./style/user.scss"
 import "./style/responsive.scss"
 import "./style/signup.scss"
 
-
 const App = () => {
   return (
     <div>
