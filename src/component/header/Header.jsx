@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {FaUserCircle} from "react-icons/fa"
-import logo from "../../asset/mindwelllogo.svg"
+import logo1 from "../../asset/headersvg.svg"
 import { Link } from "react-router-dom";
 const Header = () => {
   const auth=localStorage.getItem('user');
@@ -14,7 +14,7 @@ const Header = () => {
           delay: 1.5,
         }}
       >
-        <img src={logo} alt="logo" />
+        <img src={logo1} alt="logo" />
       </motion.div>
       <div className="navvy" style={{marginBottom: "25px"}}>
         <Link to="">Home</Link>

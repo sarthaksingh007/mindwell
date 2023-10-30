@@ -3,13 +3,13 @@ import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import { ImLocation } from "react-icons/im";
-import logo from "../../asset/logo.png";
+import logo from "../../asset/mindwelllogo.svg"
 const Footer = () => {
   return (
     <section className="footerSection">
       <article>
         <div className="Foot1">
-          <img src={logo} alt="" />
+          <img style={{"backgroundColor":"#beaceb"}} src={logo} alt="" />
           <p>Elevate Your Mental Well-being with Mindwell</p>
           <div className="footerlinks">
             <a href="dfsbfdsf">
