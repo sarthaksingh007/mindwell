@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import { Link } from "react-router-dom";
 import Delighted from "../../asset/delighted.png";
 import Good from "../../asset/good.png";
 import Okay from "../../asset/okay.png";
 import NotGreat from "../../asset/notgreat.png";
 import Overwhelmed from "../../asset/overwhelmed.png";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom"
 import "../../style/radio.css";
 
 const style = {
@@ -38,7 +38,7 @@ const Choice = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const navigate = useNavigate();
+const navigate = useNavigate()
   const [formData, setFormData] = useState({
     mood: "",
     topic: "",
@@ -57,7 +57,7 @@ const Choice = () => {
       });
       result = await result.json();
       console.log(result);
-      navigate("/user");
+      navigate('/user');
     } catch (error) {
       console.error(error); //only print the error
     }
