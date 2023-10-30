@@ -1,5 +1,5 @@
 import React from "react";
-import About1 from "../asset/about1.svg";
+import About1 from "../../asset/about1.svg";
 // import Abouts from "../asset/about.webp";
 const About = () => {
   return (

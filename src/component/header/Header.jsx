@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {FaUserCircle} from "react-icons/fa"
+// import {FaUserCircle} from "react-icons/fa"
 import logo from "../../asset/mindwelllogo.svg"
 import { Link } from "react-router-dom";
 const Header = () => {
@@ -23,9 +23,9 @@ const Header = () => {
         <Link className="vl"></Link>
         {
           auth?
-          <Link to="/login">Login</Link>
+          <Link to="/logout">Logout</Link>
           :
-          <Link to="/login"><FaUserCircle/></Link>
+          <Link to="/login">Login</Link>
         }
         
       </div>

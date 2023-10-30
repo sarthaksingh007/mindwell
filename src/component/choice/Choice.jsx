@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 const Choice = () => {
+  const auth = localStorage.getItem("user");
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (auth == null) {
+      navigate("/");
+    }
+  }, []);
+
   const [formData, setFormData] = useState({
     mood: "",
     topic: "",
@@ -20,6 +28,7 @@ const Choice = () => {
       });
       result = await result.json();
       console.log(result);
+      navigate('/user');
     } catch (error) {
       console.error(error); //only print the error
     }
@@ -66,7 +75,7 @@ const Choice = () => {
         </select>
       </div>
 
-      <Link to="/text">Get Your Mood</Link>
+      <Link to="/getMood">Get Your Mood</Link>
       <button type="submit" onClick={(e) => handleMoodTopic(e)}>
         Are you ready
       </button>
