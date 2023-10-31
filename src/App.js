@@ -7,6 +7,8 @@ import Login from './component/login/Login';
 import Choice from './component/choice/Choice';
 import User from './component/User/User';
 import SignUp from './component/signup/SignUp';
+import FindExperts from './component/findExpert/FindExpert';
+import Expert from './component/expert/Expert';
 
 import "./style/footer1.scss"
 import "./style/app.scss"
@@ -33,6 +35,8 @@ const App = () => {
           <Route path='/user' element={<User/>}/>
           <Route path='/signup' element={<SignUp/>}/>
           <Route path='/choice' element={<Choice/>}/>
+          <Route path='/findexpert' element={<FindExperts/>}/>
+          <Route path='/experts' element={<Expert/>}/>
         </Routes>
       </BrowserRouter>
       <Footer />
