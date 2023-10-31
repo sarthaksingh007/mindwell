@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Logo from "../../asset/logo.svg";
+// import Logo from "../../asset/mindwelllogo.svg";
 
 export default function Contacts({ contacts, changeChat }) {
   const [currentUserName, setCurrentUserName] = useState(undefined);
@@ -35,8 +35,8 @@ export default function Contacts({ contacts, changeChat }) {
       {currentUserImage && currentUserImage && (
         <Container>
           <div className="brand">
-            <img src={Logo} alt="logo" />
-            <h3>snappy</h3>
+            {/* <img src={Logo} alt="logo" /> */}
+            <h3>MindWell</h3>
           </div>
           <div className="contacts">
             {contacts.map((contact, index) => {

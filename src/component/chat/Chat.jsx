@@ -3,8 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 import styled from "styled-components";
-// import { allUsersRoute, host } from "../utils/APIRoutes";
-import ChatContainer from "../chatContainer/Chatcontainer";
+import Chatcontainer from "../chatContainer/chatContainer";
 import Contacts from "../onlineUsers/onlineUsers";
 import Welcome from "../welcome/welcome";
 
@@ -47,8 +46,12 @@ export default function Chat() {
     const fetchData = async () => {
       if (currentUser) {
         try {
+          const mood=await JSON.parse(localStorage.getItem('user')).mood;
+          const topic=await JSON.parse(localStorage.getItem('user')).topic;
+
           if (currentUser.isAvatarImageSet) {
-            const response = await axios.get(`http://localhost:5000/getAllUser/${currentUser._id}`);
+            const response = await axios.post(`http://localhost:5000/getAllUser/${currentUser._id}`,{mood,topic});
+            console.log(response);
             setContacts(response.data);
           } else {
             navigate("/setAvatar");
@@ -75,7 +78,7 @@ export default function Chat() {
           {currentChat === undefined ? (
             <Welcome />
           ) : (
-            <ChatContainer currentChat={currentChat} socket={socket} />
+            <Chatcontainer currentChat={currentChat} socket={socket} />
           )}
         </div>
       </Container>

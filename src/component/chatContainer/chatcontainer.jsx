@@ -6,25 +6,21 @@ import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
 export default function ChatContainer({ currentChat, socket }) {
-  console.log(currentChat);
+  // console.log(currentChat);
   const [messages, setMessages] = useState([]);
   const scrollRef = useRef();
   const [arrivalMessage, setArrivalMessage] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
         const data = await JSON.parse(localStorage.getItem('user'));
         if (data) {
-          const response = await axios.post('http://localhost:5000/getmsg', {
-            from: JSON.parse(data)._id,
+          const response = await axios.post('http://localhost:5000/getMessages', {
+            from: data._id,
             to: currentChat._id,
           });
           setMessages(response.data);
         }
-      } catch (error) {
-        console.error('Error fetching messages:', error);
-      }
     };
   
     fetchData(); 
@@ -48,7 +44,7 @@ export default function ChatContainer({ currentChat, socket }) {
       from: data._id,
       msg,
     });
-    await axios.post('http://localhost:5000/addmsg', {
+    await axios.post('http://localhost:5000/addMessage', {
       from: data._id,
       to: currentChat._id,
       message: msg,
