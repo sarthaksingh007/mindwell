@@ -25,6 +25,16 @@ const style = {
 };
 
 const Choice = () => {
+  const [isChecked, setIsChecked] = useState(false);
+  console.log(isChecked);
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+  const handleBothClicks = (e) => {
+    handleMoodTopic(e);
+    handleOpen();
+  };
+
   const [open, setOpen] = React.useState(false);
   // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -248,9 +258,9 @@ const navigate = useNavigate()
           Are you ready
         </button>
         <div>
-      {/* <button onClick={navigate('/setAvatar')} type="submit">
+      <Button onClick={handleOpen}><button type="submit" onClick={(e) => handleMoodTopic(e)}>
           Are you ready
-        </button> */}
+        </button></Button>
       <Modal
         keepMounted
         open={open}
