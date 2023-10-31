@@ -7,6 +7,8 @@ import Login from './component/login/Login';
 import Choice from './component/choice/Choice';
 import User from './component/User/User';
 import SignUp from './component/signup/SignUp';
+import SetAvatar from './component/setAvatar/setAvatar';
+import Chat from './component/chat/Chat'
 
 import "./style/footer1.scss"
 import "./style/app.scss"
@@ -33,6 +35,8 @@ const App = () => {
           <Route path='/user' element={<User/>}/>
           <Route path='/signup' element={<SignUp/>}/>
           <Route path='/choice' element={<Choice/>}/>
+          <Route path='/setAvatar' element={<SetAvatar/>}/>
+          <Route path='/chat' element={<Chat/>}/>
         </Routes>
       </BrowserRouter>
       <Footer />

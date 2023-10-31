@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Buffer } from "buffer";
-import loader from "../assets/loader.gif";
+import loader from "../../asset/loader.gif";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -24,41 +24,48 @@ export default function SetAvatar() {
   useEffect(() => {
     if (!localStorage.getItem('user'))
       navigate("/login");
-  }, []);
+  }, [navigate]);
 
   const setProfilePicture = async () => {
     if (selectedAvatar === undefined) {
       toast.error("Please select an avatar", toastOptions);
     } else {
-      const user = localStorage.getItem('user')
-
-      const { data } = await axios.post(`localhost://5000/setAvatar/${user._id}`, {
+      const user = await JSON.parse(localStorage.getItem('user'));
+      console.log(user._id);
+      const { data } = await axios.post(`http://localhost:5000/setAvatar/${user._id}`, {
         image: avatars[selectedAvatar],
       });
 
       if (data.isSet) {
         user.isAvatarImageSet = true;
         user.avatarImage = data.image;
-        localStorage.setItem('user',user);
-        navigate("/");
+        localStorage.setItem('user',JSON.stringify(user));
+        navigate("/chat");
       } else {
         toast.error("Error setting avatar. Please try again.", toastOptions);
       }
     }
   };
 
-  useEffect(async () => {
-    const data = [];
-    for (let i = 0; i < 4; i++) {
-      const image = await axios.get(
-        `${api}/${Math.round(Math.random() * 1000)}`
-      );
-      const buffer = new Buffer(image.data);
-      data.push(buffer.toString("base64"));
-    }
-    setAvatars(data);
-    setIsLoading(false);
-  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = [];
+        for (let i = 0; i < 4; i++) {
+          const response = await axios.get(`${api}/${Math.round(Math.random() * 1000)}`);
+          const buffer = new Buffer.from(response.data);
+          data.push(buffer.toString("base64"));
+        }
+        setAvatars(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+  
+    fetchData();
+  }, [navigate, api]);
+  
   return (
     <>
       {isLoading ? (

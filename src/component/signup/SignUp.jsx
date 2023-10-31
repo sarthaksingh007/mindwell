@@ -62,8 +62,8 @@ const SignUp = () => {
                   email: '',
                   password: '',
                 });
-                localStorage.setItem('user', data.name);
-                navigate('/user');
+                localStorage.setItem('user', JSON.stringify(data));
+                navigate('/choice');
               }
             } else {
               console.error('Error:', response.statusText);

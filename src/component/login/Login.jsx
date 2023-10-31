@@ -52,7 +52,7 @@ const Login = () => {
           }
   
           console.warn(data.name);
-          localStorage.setItem('user', data.name);
+          localStorage.setItem('user', JSON.stringify(data));
           setFormData({
             name: '',
             email: '',

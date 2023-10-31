@@ -1,22 +1,37 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Logo from "../assets/logo.svg";
+import Logo from "../../asset/logo.svg";
 
 export default function Contacts({ contacts, changeChat }) {
   const [currentUserName, setCurrentUserName] = useState(undefined);
   const [currentUserImage, setCurrentUserImage] = useState(undefined);
   const [currentSelected, setCurrentSelected] = useState(undefined);
+
   useEffect(() => {
-    const data =localStorage.getItem('user')
-    setCurrentUserName(data.username);
-    setCurrentUserImage(data.avatarImage);
+    const fetchData = async () => {
+      try {
+        const data = JSON.parse(localStorage.getItem('user'));
+        if (data) {
+          setCurrentUserName(data.name);
+          setCurrentUserImage(data.avatarImage);
+        }
+      } catch (error) {
+        console.error('Error setting current user data:', error);
+      }
+    };
+  
+    fetchData(); 
+  
   }, []);
+  
+
   const changeCurrentChat = (index, contact) => {
     setCurrentSelected(index);
     changeChat(contact);
   };
   return (
     <>
+   
       {currentUserImage && currentUserImage && (
         <Container>
           <div className="brand">
@@ -25,6 +40,7 @@ export default function Contacts({ contacts, changeChat }) {
           </div>
           <div className="contacts">
             {contacts.map((contact, index) => {
+               console.log(contact);
               return (
                 <div
                   key={contact._id}
@@ -40,7 +56,7 @@ export default function Contacts({ contacts, changeChat }) {
                     />
                   </div>
                   <div className="username">
-                    <h3>{contact.username}</h3>
+                    <h3>{contact.name}</h3>
                   </div>
                 </div>
               );
