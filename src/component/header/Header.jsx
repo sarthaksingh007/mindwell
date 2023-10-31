@@ -1,26 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import logo1 from "../../asset/headersvg.svg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const Header = () => {
-  const [auth, setAuth] = useState(false);
   const navigate=useNavigate();
-  
-  useEffect(() => {
-    const user = localStorage.getItem('user');
-    if (user) {
-      setAuth(true);
-    } else {
-      setAuth(false);
-    }
-  }, []);
+  const user = JSON.parse(localStorage.getItem('user'));
 
-  const onlogout = () => {
-    localStorage.clear();
-    setAuth(false);
-    navigate('/')
+  const handleClick = async () => {
+    const id = await JSON.parse(localStorage.getItem('user'))._id;
+    const data = await axios.get(`http://localhost:5000/logOut/${id}`);
+    if (data.status === 200) {
+      localStorage.clear();
+      navigate("/login");
+    }
   };
 
   return (
@@ -39,9 +34,9 @@ const Header = () => {
         <Link to="">About Us</Link>
         <Link to="">FAQ</Link>
         <Link className="vl"></Link>
-        {auth ? 
+        {user ? 
         (
-          <button onClick={onlogout}>Logout</button>
+          <button onClick={handleClick}>Logout</button>
         ) 
         : 
         (

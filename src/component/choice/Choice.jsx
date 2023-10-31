@@ -1,15 +1,14 @@
-import React from "react";
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-// import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import React, { useState } from "react";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import Delighted from "../../asset/delighted.png";
 import Good from "../../asset/good.png";
 import Okay from "../../asset/okay.png";
 import NotGreat from "../../asset/notgreat.png";
 import Overwhelmed from "../../asset/overwhelmed.png";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import "../../style/radio.css";
 
 const style = {
@@ -25,50 +24,46 @@ const style = {
 };
 
 const Choice = () => {
-  const [isChecked, setIsChecked] = useState(false);
-  console.log(isChecked);
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
-  const handleBothClicks = (e) => {
-    handleMoodTopic(e);
-    handleOpen();
+  const [open, setOpen] = useState(false);
+  const [mood, setmood] = useState("");
+  const [topic, settopic] = useState("");
+
+  const handleSelectMood = (mood) => {
+    setmood(mood);
   };
 
-  const [open, setOpen] = React.useState(false);
-  // const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-const navigate = useNavigate()
-//   const [formData, setFormData] = useState({
-//     mood: "",
-//     topic: "",
-//   });
-  const handleMoodTopic = async (e) => {
-//     e.preventDefault();
-//     console.log("Users", formData.mood, formData.topic);
-//     try {
-//       let result = await fetch("http://localhost:5000/getmoodandtopic", {
-//         method: "post",
-//         body: JSON.stringify(formData),
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         credentials: "include", // added the session
-//       });
-//       result = await result.json();
-//       console.log(result);
-      navigate('/setAvatar');
-//     } catch (error) {
-//       console.error(error); //only print the error
-//     }
-//   };
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({
-//       ...formData,
-//       [name]: value,
-//     });
+  const handleSelectTopic = (topic) => {
+    settopic(topic);
+    console.log("selected topic", topic);
   };
+  const handleOpen = () => setOpen(true);
+  const navigate = useNavigate();
+
+
+  const handleMoodTopic = async (e) => {
+    e.preventDefault();
+    if(mood==="" || topic===""){
+      alert("Please Select the Mood and Topic");
+      return false;
+    }
+    const userId = await JSON.parse(localStorage.getItem('user'))._id;
+    try {
+      let result = await fetch("http://localhost:5000/getmoodandtopic", {
+        method: "post",
+        body: JSON.stringify({ mood,topic,userId }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+      result = await result.json();
+      console.log(result);
+      navigate("/setAvatar");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
       <div className="1">
@@ -78,7 +73,10 @@ const navigate = useNavigate()
 
         <div className="container1">
           <div className="radio-tile-group">
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectMood("Delighted")}
+            >
               <input id="Delighted" type="radio" name="radio" />
               <div className="radio-tile">
                 <img
@@ -92,7 +90,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectMood("Good")}
+            >
               <input id="Good" type="radio" name="radio" />
               <div className="radio-tile">
                 <img
@@ -106,7 +107,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectMood("Okay")}
+            >
               <input id="Okay" type="radio" name="radio" />
               <div className="radio-tile">
                 <img
@@ -120,7 +124,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectMood("Not great")}
+            >
               <input id="Notgreat" type="radio" name="radio" />
               <div className="radio-tile">
                 <img
@@ -137,7 +144,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectMood("overwhelm")}
+            >
               <input id="Overwhelmed" type="radio" name="radio" />
               <div className="radio-tile">
                 <img
@@ -163,7 +173,10 @@ const navigate = useNavigate()
 
         <div className="container1">
           <div className="radio-tile-group">
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectTopic("Family & Friends")}
+            >
               <input id="family-friend" type="radio" name="radio" />
               <div className="radio-tile">
                 <label htmlFor="family-friend" style={{ textAlign: "center" }}>
@@ -172,7 +185,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectTopic("Relationship")}
+            >
               <input id="Relationship" type="radio" name="radio" />
               <div className="radio-tile">
                 <label htmlFor="Relationship" style={{ textAlign: "center" }}>
@@ -181,7 +197,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectTopic("Academics")}
+            >
               <input id="Academics" type="radio" name="radio" />
               <div className="radio-tile">
                 <label htmlFor="Academics" style={{ textAlign: "center" }}>
@@ -190,7 +209,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectTopic("Professional Life")}
+            >
               <input id="ProfessionalLife" type="radio" name="radio" />
               <div className="radio-tile">
                 <label
@@ -202,7 +224,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectTopic("Covid-19")}
+            >
               <input id="Covid-19" type="radio" name="radio" />
               <div className="radio-tile">
                 <label htmlFor="Covid-19" ststyle={{ textAlign: "center" }}>
@@ -211,7 +236,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectTopic("Self")}
+            >
               <input id="Self" type="radio" name="radio" />
               <div className="radio-tile">
                 <label htmlFor="Self" ststyle={{ textAlign: "center" }}>
@@ -220,7 +248,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectTopic("Just talk")}
+            >
               <input id="Justtalk" type="radio" name="radio" />
               <div className="radio-tile">
                 <label htmlFor="Justtalk" ststyle={{ textAlign: "center" }}>
@@ -229,7 +260,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectTopic("Loss & grief")}
+            >
               <input id="Lossandgrief" type="radio" name="radio" />
               <div className="radio-tile">
                 <label htmlFor="Lossandgrief" ststyle={{ textAlign: "center" }}>
@@ -238,7 +272,10 @@ const navigate = useNavigate()
               </div>
             </div>
 
-            <div className="input-container">
+            <div
+              className="input-container"
+              onClick={() => handleSelectTopic("Loneliness")}
+            >
               <input id="Loneliness" type="radio" name="radio" />
               <div className="radio-tile">
                 <label htmlFor="Loneliness" ststyle={{ textAlign: "center" }}>
@@ -254,30 +291,35 @@ const navigate = useNavigate()
         <Link className="atag" to="/text">
           Get Your Mood
         </Link>
-        <button type="submit" onClick={(e) => handleMoodTopic(e)}>
+        <button type="submit" onClick={handleOpen}>
           Are you ready
         </button>
         <div>
-      <Button onClick={handleOpen}><button type="submit" onClick={(e) => handleMoodTopic(e)}>
-          Are you ready
-        </button></Button>
-      <Modal
-        keepMounted
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="keep-mounted-modal-title"
-        aria-describedby="keep-mounted-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
-           
-          </Typography>
-          <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
-      </Modal>
-    </div>
+          <Modal
+            keepMounted
+            open={open}
+            onClose={() => setOpen(false)}
+            aria-labelledby="disclaimer-title"
+            aria-describedby="disclaimer-description"
+          >
+            <Box sx={style}>
+              <Typography id="disclaimer-title" variant="h6" component="h2">
+                Disclaimer: Terms and Conditions
+              </Typography>
+              <Typography id="disclaimer-description" style={{ marginTop: '10px', marginBottom: '10px' }}>
+                By clicking 'Agree', you agree to abide by the terms
+                and conditions set forth in our policies. This includes but is
+                not limited to our privacy policy, cookie policy, and other
+                usage terms. Please read and understand our terms before
+                proceeding.
+              </Typography>
+              <button type="submit" style={{ marginRight: '10px'}} onClick={(e) => handleMoodTopic(e)}>
+                Agree
+              </button>
+              <button onClick={() => setOpen(false)}>Close</button>
+            </Box>
+          </Modal>
+        </div>
       </div>
     </div>
   );

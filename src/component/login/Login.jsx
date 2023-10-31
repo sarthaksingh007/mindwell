@@ -51,7 +51,7 @@ const Login = () => {
             return;
           }
   
-          console.warn(data.name);
+          console.warn(data);
           localStorage.setItem('user', JSON.stringify(data));
           setFormData({
             name: '',
