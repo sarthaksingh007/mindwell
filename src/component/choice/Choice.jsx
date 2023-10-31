@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from "react-router-dom";
 import Delighted from "../../asset/delighted.png";
@@ -36,38 +36,38 @@ const Choice = () => {
   };
 
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+  // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 const navigate = useNavigate()
-  const [formData, setFormData] = useState({
-    mood: "",
-    topic: "",
-  });
+//   const [formData, setFormData] = useState({
+//     mood: "",
+//     topic: "",
+//   });
   const handleMoodTopic = async (e) => {
-    e.preventDefault();
-    console.log("Users", formData.mood, formData.topic);
-    try {
-      let result = await fetch("http://localhost:5000/getmoodandtopic", {
-        method: "post",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include", // added the session
-      });
-      result = await result.json();
-      console.log(result);
-      navigate('/user');
-    } catch (error) {
-      console.error(error); //only print the error
-    }
-  };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+//     e.preventDefault();
+//     console.log("Users", formData.mood, formData.topic);
+//     try {
+//       let result = await fetch("http://localhost:5000/getmoodandtopic", {
+//         method: "post",
+//         body: JSON.stringify(formData),
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         credentials: "include", // added the session
+//       });
+//       result = await result.json();
+//       console.log(result);
+      navigate('/setAvatar');
+//     } catch (error) {
+//       console.error(error); //only print the error
+//     }
+//   };
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData({
+//       ...formData,
+//       [name]: value,
+//     });
   };
   return (
     <div>
@@ -254,87 +254,30 @@ const navigate = useNavigate()
         <Link className="atag" to="/text">
           Get Your Mood
         </Link>
-        {/* <button type="submit" onClick={(e) => handleMoodTopic(e)}>
+        <button type="submit" onClick={(e) => handleMoodTopic(e)}>
           Are you ready
-        </button> */}
+        </button>
         <div>
-          <button type="submit" onClick={handleBothClicks}>
-            Are you ready
-          </button>
-          <Modal
-            keepMounted
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="keep-mounted-modal-title"
-            aria-describedby="keep-mounted-modal-description"
-          >
-            <Box sx={style}>
-              <Typography
-                id="keep-mounted-modal-title"
-                variant="h6"
-                component="h1"
-                style={{
-                  color: "#946ef5",
-                  fontSize: "2.2rem",
-                  fontWeight: "900",
-                }}
-              >
-                Disclaimer
-              </Typography>
-              <Typography
-                style={{ color: "#636363" }}
-                id="keep-mounted-modal-description"
-                sx={{ mt: 2 }}
-              >
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Ratione enim fuga tempore earum harum vel numquam delectus vitae
-                voluptate dignissimos!
-                <br />
-                <div className="checkbox-wrapper-12">
-                  <div className="cbx">
-                    <input
-                      id="cbx-12"
-                      type="checkbox"
-                      checked={isChecked}
-                      onChange={handleCheckboxChange}
-                    />
-                    <label htmlFor="cbx-12"></label>
-                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
-                      <path d="M2 8.36364L6.23077 12L13 2"></path>
-                    </svg>
-                  </div>
-                  {/* <!-- Gooey--> */}
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <defs>
-                      <filter id="goo-12">
-                        <fegaussianblur
-                          in="SourceGraphic"
-                          stdDeviation="4"
-                          result="blur"
-                        ></fegaussianblur>
-                        <fecolormatrix
-                          in="blur"
-                          mode="matrix"
-                          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7"
-                          result="goo-12"
-                        ></fecolormatrix>
-                        <feblend in="SourceGraphic" in2="goo-12"></feblend>
-                      </filter>
-                    </defs>
-                  </svg>
-                </div>
-                <br />
-                <button
-                  type="submit"
-                  disabled={!isChecked}
-                  onClick={(e) => handleMoodTopic(e)}
-                >
-                  Lets chat
-                </button>
-              </Typography>
-            </Box>
-          </Modal>
-        </div>
+      <Button onClick={handleOpen}><button type="submit" onClick={(e) => handleMoodTopic(e)}>
+          Are you ready
+        </button></Button>
+      <Modal
+        keepMounted
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="keep-mounted-modal-title"
+        aria-describedby="keep-mounted-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
+           
+          </Typography>
+          <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </Typography>
+        </Box>
+      </Modal>
+    </div>
       </div>
     </div>
   );

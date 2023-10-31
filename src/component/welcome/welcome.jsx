@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Robot from "../assets/robot.gif";
+import Robot from "../../asset/robot.gif";
+
 export default function Welcome() {
   const [userName, setUserName] = useState("");
+
   useEffect(() => {
-    setUserName((localStorage.getItem('user')).username);
+    const fetchUserName = async () => {
+      try {
+        const userData = await JSON.parse(
+          localStorage.getItem('user')
+        );
+        if (userData && userData.name) {
+          setUserName(userData.name);
+        }
+      } catch (error) {
+        console.error('Error fetching username:', error);
+      }
+    };
+  
+    fetchUserName();
+  
   }, []);
+  
   
   return (
     <Container>
