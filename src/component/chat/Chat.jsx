@@ -20,7 +20,7 @@ export default function Chat() {
       const data=JSON.parse(localStorage.getItem('user'));
       console.log(data);
       if (!localStorage.getItem('user')) {
-        // navigate("/login");
+        navigate("/login");
       } else {
         try {
           const user = JSON.parse(localStorage.getItem('user'));
