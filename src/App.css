@@ -1,0 +1,41 @@
+.expertLink {
+    text-decoration: none;
+    color: #636363;
+    font-weight: 600;
+    border: 7px solid #9370DB;
+    margin: 1rem 2rem 2rem 1rem;
+    border-radius: 8px;
+  }
+  
+  .upperexpert {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .expertP {
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1rem 0rem 0rem 0rem;
+  }
+  
+  .findexpertDiv {
+    width: 200px;
+    margin: 1.4rem;
+  }
+  
+  .findImage {
+    display: block;
+    /* Make sure it's a block-level element */
+    margin: 0 auto;
+    width: 120px;
+  }
+  
+  .h2offind {
+    margin: 1rem 0 1rem 0;
+    text-align: center;
+    font-size: 2rem;
+    color: #636363;
+  }
