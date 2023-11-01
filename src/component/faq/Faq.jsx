@@ -5,22 +5,26 @@ const data = {
   title: "FAQ",
   rows: [
     {
-      title: "Lorem ipsum dolor sit amet,",
-      content: "Lorem ipsum dolor sit amet, consectetur ",
+      title: "What are the common symptoms of stress?",
+      content: "Symptoms of stress can manifest physically, emotionally, or behaviorally. They may include headaches, fatigue, irritability, changes in sleep or appetite, difficulty concentrating, and muscle tension.",
     },
     {
-      title: "Nunc maximus, magna at ultricies elementum",
+      title: "How does stress affect the body?",
       content:
-        "Nunc maximus, magna at ultricies elementum, blanditiis totam eligendi fugit esse. Quas ullam ratione quibusdam excepturi dicta repellendus nulla. Facilis doloremque eaque error quam voluptates exercitationem suscipit necessitatibus laborum architecto assumenda! ",
+        "Prolonged stress can impact physical health, leading to issues such as high blood pressure, weakened immune system, digestive problems, and an increased risk of heart disease.",
     },
     {
-      title: "Curabitur laoreet, mauris vel blandit fringilla",
+      title: "What are some effective stress management techniques?",
       content:
-        "Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc",
+        "Effective stress management techniques include regular exercise, mindfulness meditation, deep breathing exercises, maintaining a healthy diet, getting adequate sleep, and seeking social support.",
     },
     {
-      title: "What is the package version",
-      content: "v1.0.5",
+      title: "What is the difference between stress and anxiety?",
+      content: "While stress is a response to specific external pressures, anxiety is a sustained and often excessive worry about future events, and it can occur without an identifiable trigger.",
+    },
+    {
+      title: "What role does relaxation play in managing stress?",
+      content: "Relaxation techniques like deep breathing, progressive muscle relaxation, and mindfulness exercises help reduce the body's stress response, promoting a sense of calm and well-being.",
     },
   ],
 };
