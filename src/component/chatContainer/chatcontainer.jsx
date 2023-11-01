@@ -133,7 +133,7 @@ const Container = styled.div`
       }
       .username {
         h3 {
-          color: white;
+          color: black;
         }
       }
     }
@@ -170,12 +170,14 @@ const Container = styled.div`
     .sended {
       justify-content: flex-end;
       .content {
+        color:black;
         background-color: #4f04ff21;
       }
     }
     .recieved {
       justify-content: flex-start;
       .content {
+        color:black;
         background-color: #9900ff20;
       }
     }
