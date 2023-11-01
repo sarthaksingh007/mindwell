@@ -3,10 +3,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 import styled from "styled-components";
-// import Chatcontainer from "../chatContainer/ChatContainer.jsx";
+
 import Contacts from "../onlineUsers/onlineUsers";
 import Welcome from "../welcome/welcome";
-import ChatContainer from "../chatContainer/ChatContainer";
+import ChatContainer from '../chatcontainer/ChatContainer.jsx';
 
 export default function Chat() {
   const navigate = useNavigate();
