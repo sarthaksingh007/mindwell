@@ -10,6 +10,7 @@ import SignUp from './component/signup/SignUp';
 import FindExpert from './component/findExpert/FindExpert';
 import SetAvatar from './component/setAvatar/setAvatar'
 import Chat from './component/chat/Chat'
+import Expert from './component/expert/Expert';
 
 import "./style/footer1.scss"
 import "./style/app.scss"
@@ -24,7 +25,7 @@ import "./style/chat.scss"
 import "./style/user.scss"
 import "./style/responsive.scss"
 import "./style/signup.scss"
-import Expert from './component/expert/Expert';
+
 
 const App = () => {
   return (

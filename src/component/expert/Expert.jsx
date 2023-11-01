@@ -10,10 +10,10 @@ import img8 from "../../asset/8.jpg";
 import img9 from "../../asset/9.jpg";
 import img10 from "../../asset/10.jpg";
 import { Link } from "react-router-dom";
-// import FaUserGraduate from "react-icons/fa6"
-// import SlCalender from "react-icons/si"
-// import FaLanguage from "react-icons/fa"
-// import AiFillStar from "react-icons/ai"
+import {FaUserGraduate} from "react-icons/fa6"
+import {MdNotes} from "react-icons/md"
+import {FaLanguage} from "react-icons/fa"
+import {AiFillStar} from "react-icons/ai"
 import {AiOutlineArrowRight} from "react-icons/ai"
 
 const Expert = () => {
@@ -129,10 +129,10 @@ const Expert = () => {
               <img className="imgimg" src={item.imgSrc} alt="" />
               <div className="expertcontent">
                 <h2 className="expertheading">{item.name}</h2>
-                <p className="expertpara">{item.description}</p>
-                <p className="expertpara">{item.Experience}</p>
-                <p className="expertpara">{item.language}</p>
-                <p className="expertpara">{item.category}</p>
+                <p className="expertpara"><FaUserGraduate/>&nbsp;{item.description}</p>
+                <p className="expertpara"><MdNotes/>&nbsp;{item.Experience}</p>
+                <p className="expertpara"><FaLanguage/>&nbsp;{item.language}</p>
+                <p className="expertpara"><AiFillStar/>&nbsp;{item.category}</p>
                 <p className="expertpara">Book in {item.price}<Link className="linking" to="/"> click here <AiOutlineArrowRight/></Link></p>
               </div>
               
