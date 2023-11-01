@@ -92,52 +92,7 @@ const FindExperts = () => {
       imgSrc: Women,
     },
   ];
-
-  // const popularExperts = [
-  //   {
-  //     id: 1,
-  //     name: 'Expert 1 ',
-  //     imgSrc: '/2.jpg',
-  //     description: [
-  //       'CEO, Co-Founder',
-
-  //     ],
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Expert 2',
-  //     imgSrc: '/4.jpg',
-  //     description: 'Description of Expert 2.',
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Expert 2',
-  //     imgSrc: '/3.jpg',
-  //     description: 'Description of Expert 2.',
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Expert 2',
-  //     imgSrc: '/5.jpg',
-  //     description: 'Description of Expert 2.',
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Expert 2',
-  //     imgSrc: '/6.jpg',
-  //     description: 'Description of Expert 2.',
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Expert 2',
-  //     imgSrc: '/7.jpg',
-  //     description: 'Description of Expert 2.',
-  //   },
-
-  // ];
-
-
-
+  
   return (
     <div>
       <h2 className='h2offind'>What do you want to <span style={{color:"#9370DB"}}>talk about?</span></h2>

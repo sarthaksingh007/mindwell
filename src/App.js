@@ -24,6 +24,7 @@ import "./style/chat.scss"
 import "./style/user.scss"
 import "./style/responsive.scss"
 import "./style/signup.scss"
+import Expert from './component/expert/Expert';
 
 const App = () => {
   return (
@@ -39,7 +40,7 @@ const App = () => {
           <Route path='/setAvatar' element={<SetAvatar/>}/>
           <Route path='/chat' element={<Chat/>}/>
           <Route path='/findExpert' element={<FindExpert/>}/>
-    
+          <Route path='/experts' element={<Expert/>}/>
         </Routes>
       </BrowserRouter>
       <Footer />
