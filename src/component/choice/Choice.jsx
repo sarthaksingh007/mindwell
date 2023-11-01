@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
@@ -27,6 +27,12 @@ const Choice = () => {
   const [open, setOpen] = useState(false);
   const [mood, setmood] = useState("");
   const [topic, settopic] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem('user'))
+      navigate("/login");
+  }, [navigate]);
 
   const handleSelectMood = (mood) => {
     setmood(mood);
@@ -37,7 +43,7 @@ const Choice = () => {
     console.log("selected topic", topic);
   };
   const handleOpen = () => setOpen(true);
-  const navigate = useNavigate();
+  
 
 
   const handleMoodTopic = async (e) => {

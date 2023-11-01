@@ -16,6 +16,9 @@ export default function Chat() {
   
   useEffect(() => {
     const checkUser = async () => {
+
+      const data=JSON.parse(localStorage.getItem('user'));
+      console.log(data);
       if (!localStorage.getItem('user')) {
         navigate("/login");
       } else {
@@ -46,11 +49,8 @@ export default function Chat() {
     const fetchData = async () => {
       if (currentUser) {
         try {
-          const mood=await JSON.parse(localStorage.getItem('user')).mood;
-          const topic=await JSON.parse(localStorage.getItem('user')).topic;
-
           if (currentUser.isAvatarImageSet) {
-            const response = await axios.post(`http://localhost:5000/getAllUser/${currentUser._id}`,{mood,topic});
+            const response = await axios.post(`http://localhost:5000/getAllUser/${currentUser._id}`);
             console.log(response);
             setContacts(response.data);
           } else {
