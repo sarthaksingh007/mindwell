@@ -5,8 +5,13 @@ import Aboutus from "../about/About"
 import Services from "../services/Services"
 import FAQ from "../faq/Faq"
 import Contactus from "../contactUsPage/Contact"
+import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
 const Home = () => {
+  const navigate=useNavigate();
+  const handleChange=()=>{
+    navigate('/login')
+  }
   return (
     <>
     <section className="home">
@@ -17,7 +22,7 @@ const Home = () => {
         <h2>Your</h2>
         <span>Feel Better</span>
         <h2>Platform</h2>
-        <button className="headbtn">FIND COUNSELLOR</button>
+        <button className="headbtn" onClick={handleChange}>EXPLORE MORE</button>
       </article>
     </section>
     <Qoute/>

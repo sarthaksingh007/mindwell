@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { BsEmojiSmileFill } from "react-icons/bs";
+// import { BsEmojiSmileFill } from "react-icons/bs";
 import { IoMdSend } from "react-icons/io";
 import styled from "styled-components";
-import Picker from "emoji-picker-react";
+// import Picker from "emoji-picker-react";
 
 export default function ChatInput({ handleSendMsg }) {
   const [msg, setMsg] = useState("");
-  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  const handleEmojiPickerhideShow = () => {
-    setShowEmojiPicker(!showEmojiPicker);
-  };
+  // const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  // const handleEmojiPickerhideShow = () => {
+  //   setShowEmojiPicker(!showEmojiPicker);
+  // };
 
-  const handleEmojiClick = (event, emojiObject) => {
-    let message = msg;
-    message += emojiObject.emoji;
-    setMsg(message);
-  };
+  // const handleEmojiClick = (event, emojiObject) => {
+  //   let message = msg;
+  //   message += emojiObject.emoji;
+  //   setMsg(message);
+  // };
 
   const sendChat = (event) => {
     event.preventDefault();
@@ -35,6 +35,7 @@ export default function ChatInput({ handleSendMsg }) {
       </div>
       <form className="" onSubmit={(event) => sendChat(event)}>
         <input
+        className="chat-input"
           type="text"
           placeholder="type your message here"
           onChange={(e) => setMsg(e.target.value)}
@@ -57,6 +58,22 @@ const Container = styled.div`
   @media screen and (min-width: 720px) and (max-width: 1080px) {
     padding: 0 1rem;
     gap: 1rem;
+  }
+  .chat-input{
+    width:80%;
+    height:60%;
+    padding:20px;
+    margin-right:20px;
+    background-color: transparent;
+    color:white;
+    border: none;
+
+    &::selection {
+      background-color: #9a86f3;
+    }
+    &:focus {
+      outline: none;
+    }
   }
   .button-container {
     display: flex;

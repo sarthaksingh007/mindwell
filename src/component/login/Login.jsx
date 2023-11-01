@@ -58,7 +58,7 @@ const Login = () => {
             email: '',
             password: '',
           });
-          navigate('/choice');
+          navigate('/user');
           
         } else {
           console.error('Error:', response.statusText);

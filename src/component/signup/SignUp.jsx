@@ -63,7 +63,7 @@ const SignUp = () => {
                   password: '',
                 });
                 localStorage.setItem('user', JSON.stringify(data));
-                navigate('/choice');
+                navigate('/user');
               }
             } else {
               console.error('Error:', response.statusText);

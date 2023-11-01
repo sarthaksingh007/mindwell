@@ -33,6 +33,7 @@ const Header = () => {
         <Link to="">Home</Link>
         <Link to="">About Us</Link>
         <Link to="">FAQ</Link>
+        <Link to="/user">FIND EXPERT</Link>
         <Link className="vl"></Link>
         {user ? 
         (
