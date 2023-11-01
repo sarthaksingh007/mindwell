@@ -113,7 +113,7 @@ const Container = styled.div`
   gap: 3rem;
   background-color: #ccc;
   height: 100vh;
-  width: 100vw;
+  width: 98.9vw;
 
   .loader {
     max-inline-size: 30%;
