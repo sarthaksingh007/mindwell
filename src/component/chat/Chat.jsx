@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 import Contacts from "../onlineUsers/onlineUsers";
 import Welcome from "../welcome/welcome";
-import ChatContainer from '../chatcontainer/ChatContainer.jsx';
+import ChatContainer from '../chatcontain/Chatone.jsx';
 
 export default function Chat() {
   const navigate = useNavigate();
