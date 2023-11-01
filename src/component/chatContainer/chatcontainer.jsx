@@ -15,7 +15,7 @@ export default function ChatContainer({ currentChat, socket }) {
     const fetchData = async () => {
         const data = await JSON.parse(localStorage.getItem('user'));
         if (data) {
-          const response = await axios.post('http://localhost:5000/getMessages', {
+          const response = await axios.post('https://mindwell-backend.onrender.com/getMessages', {
             from: data._id,
             to: currentChat._id,
           });
@@ -44,7 +44,7 @@ export default function ChatContainer({ currentChat, socket }) {
       from: data._id,
       msg,
     });
-    await axios.post('http://localhost:5000/addMessage', {
+    await axios.post('https://mindwell-backend.onrender.com/addMessage', {
       from: data._id,
       to: currentChat._id,
       message: msg,

@@ -54,7 +54,7 @@ const Contact = () => {
   
     if (validation()) {
       try {
-        const response = await fetch('http://localhost:5000/sendmessage', {
+        const response = await fetch('https://mindwell-backend.onrender.com/sendmessage', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

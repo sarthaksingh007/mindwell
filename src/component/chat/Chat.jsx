@@ -40,7 +40,7 @@ export default function Chat() {
 
   useEffect(() => {
     if (currentUser) {
-      socket.current = io("http://localhost:5000");
+      socket.current = io("https://mindwell-backend.onrender.com");
       socket.current.emit("add-user", currentUser._id);
     }
   }, [currentUser]);
@@ -50,7 +50,7 @@ export default function Chat() {
       if (currentUser) {
         try {
           if (currentUser.isAvatarImageSet) {
-            const response = await axios.post(`http://localhost:5000/getAllUser/${currentUser._id}`);
+            const response = await axios.post(`https://mindwell-backend.onrender.com/getAllUser/${currentUser._id}`);
             console.log(response);
             setContacts(response.data);
           } else {

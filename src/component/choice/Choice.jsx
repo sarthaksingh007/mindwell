@@ -54,7 +54,7 @@ const Choice = () => {
     }
     const userId = await JSON.parse(localStorage.getItem('user'))._id;
     try {
-      let result = await fetch("http://localhost:5000/getmoodandtopic", {
+      let result = await fetch("https://mindwell-backend.onrender.com/getmoodandtopic", {
         method: "post",
         body: JSON.stringify({ mood,topic,userId }),
         headers: {

@@ -11,7 +11,7 @@ const Header = () => {
 
   const handleClick = async () => {
     const id = await JSON.parse(localStorage.getItem('user'))._id;
-    const data = await axios.get(`http://localhost:5000/logOut/${id}`);
+    const data = await axios.get(`https://mindwell-backend.onrender.com/logOut/${id}`);
     if (data.status === 200) {
       localStorage.clear();
       navigate("/login");
