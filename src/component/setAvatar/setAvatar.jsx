@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Buffer } from "buffer";
-import loader from "../../asset/loader.gif";
+import loader from "../../asset/bouncing-circles.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -111,17 +111,17 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 3rem;
-  background-color: #131324;
+  background-color: #ccc;
   height: 100vh;
   width: 100vw;
 
   .loader {
-    max-inline-size: 100%;
+    max-inline-size: 30%;
   }
 
   .title-container {
     h1 {
-      color: white;
+      color: #636363;
     }
   }
   .avatars {
@@ -129,7 +129,7 @@ const Container = styled.div`
     gap: 2rem;
 
     .avatar {
-      border: 0.4rem solid transparent;
+      border: 0.4rem solid #946ef5;
       padding: 0.4rem;
       border-radius: 5rem;
       display: flex;
