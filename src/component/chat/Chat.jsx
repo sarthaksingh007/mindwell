@@ -20,7 +20,7 @@ export default function Chat() {
       const data=JSON.parse(localStorage.getItem('user'));
       console.log(data);
       if (!localStorage.getItem('user')) {
-        navigate("/login");
+        // navigate("/login");
       } else {
         try {
           const user = JSON.parse(localStorage.getItem('user'));
@@ -93,12 +93,13 @@ const Container = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #131324;
+  // background-color: #131324;
   .container {
     height: 85vh;
     width: 85vw;
-    background-color: #00000076;
+    background-color: #ccc;
     display: grid;
+    border-radius:10px;
     grid-template-columns: 25% 75%;
     @media screen and (min-width: 720px) and (max-width: 1080px) {
       grid-template-columns: 35% 65%;
