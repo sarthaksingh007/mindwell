@@ -32,7 +32,7 @@ export default function SetAvatar() {
     } else {
       const user = await JSON.parse(localStorage.getItem('user'));
       console.log(user._id);
-      const { data } = await axios.post(`https://mindwell-backend.onrender.com/setAvatar/${user._id}`, {
+      const { data } = await axios.post(`https://mindwell-server.onrender.com/setAvatar/${user._id}`, {
         image: avatars[selectedAvatar],
       });
 

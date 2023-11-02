@@ -31,7 +31,7 @@ const Login = () => {
   
     if (validation()) {
       try {
-        const response = await fetch('https://mindwell-backend.onrender.com/login', {
+        const response = await fetch('https://mindwell-server.onrender.com/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
