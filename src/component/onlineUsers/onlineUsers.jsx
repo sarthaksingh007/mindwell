@@ -36,7 +36,7 @@ export default function Contacts({ contacts, changeChat }) {
         <Container>
           <div className="brand">
             {/* <img src={Logo} alt="logo" /> */}
-            <h3>MindWell</h3>
+            <h3>Online USers</h3>
           </div>
           <div className="contacts">
             {contacts.map((contact, index) => {
@@ -83,6 +83,7 @@ const Container = styled.div`
   grid-template-rows: 10% 75% 15%;
   overflow: hidden;
   background-color: #080420;
+  border-radius: 10px 0 0 10px;
   .brand {
     display: flex;
     align-items: center;
