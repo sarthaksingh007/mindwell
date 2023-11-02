@@ -3,9 +3,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 import styled from "styled-components";
-import Chatcontainer from "../chatContainer/chatContainer";
+
 import Contacts from "../onlineUsers/onlineUsers";
 import Welcome from "../welcome/welcome";
+import ChatContainer from '../chatcontain/Chatone.jsx';
 
 export default function Chat() {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ export default function Chat() {
 
   useEffect(() => {
     if (currentUser) {
-      socket.current = io("https://mindwell-backend.onrender.com");
+      socket.current = io("https://mindwell-server.onrender.com/");
       socket.current.emit("add-user", currentUser._id);
     }
   }, [currentUser]);
@@ -50,7 +51,7 @@ export default function Chat() {
       if (currentUser) {
         try {
           if (currentUser.isAvatarImageSet) {
-            const response = await axios.post(`https://mindwell-backend.onrender.com/getAllUser/${currentUser._id}`);
+            const response = await axios.post(`https://mindwell-server.onrender.com/getAllUser/${currentUser._id}`);
             console.log(response);
             setContacts(response.data);
           } else {
@@ -78,7 +79,7 @@ export default function Chat() {
           {currentChat === undefined ? (
             <Welcome />
           ) : (
-            <Chatcontainer currentChat={currentChat} socket={socket} />
+            <ChatContainer currentChat={currentChat} socket={socket} />
           )}
         </div>
       </Container>

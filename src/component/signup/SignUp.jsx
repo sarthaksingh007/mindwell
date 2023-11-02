@@ -41,7 +41,7 @@ const SignUp = () => {
       
         if (validation()) {
           try {
-            const response = await fetch('https://mindwell-backend.onrender.com/register', {
+            const response = await fetch('https://mindwell-server.onrender.com/register', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
