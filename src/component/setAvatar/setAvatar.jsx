@@ -142,7 +142,7 @@ const Container = styled.div`
       }
     }
     .selected {
-      border: 0.4rem solid #4e0eff;
+      border: 0.4rem solid black;
     }
   }
   }

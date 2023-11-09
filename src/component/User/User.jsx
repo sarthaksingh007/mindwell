@@ -193,7 +193,7 @@ const User = () => {
       </div>
       <div className="userchat">
         <h1>Oops! You are disconnected.</h1>
-        <button className="" onClick={handlechange}>New Chat</button>
+        <button className="" onClick={handlechange}>Lets Chat</button>
       </div>
     </section>
   );
