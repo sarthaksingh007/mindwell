@@ -37,7 +37,7 @@ const Header = () => {
         <Link className="vl"></Link>
         {user ? 
         (
-          <button onClick={handleClick}>Logout</button>
+          <Link onClick={handleClick}>Logout</Link>
         ) 
         : 
         (
