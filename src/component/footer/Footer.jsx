@@ -26,14 +26,14 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="Foot2">
+        {/* <div className="Foot2">
           <h3>UseFul Links</h3>
           <hr />
           <a href="fdsfs">About Us</a>
           <a href="sdffs">Services</a>
           <a href="fdsfs">LogIn/SignUp</a>
-        </div>
-        <div className="Foot3">
+        </div> */}
+        {/* <div className="Foot3">
           <h1>
             CONTACT <span>DETAILS</span>
           </h1>
@@ -52,7 +52,7 @@ const Footer = () => {
               177209
             </h4>
           </div>
-        </div>
+        </div> */}
       </article>
       <hr />
       <div className="right">

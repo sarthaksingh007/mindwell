@@ -19,9 +19,9 @@
   > article {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     padding: 1rem;
     padding-bottom: 1rem;
+    justify-content: center;
 
     > .Foot3 {
       border-radius: 10px;
@@ -78,22 +78,24 @@
     }
 
     > .Foot1 {
-      margin-left: 50px;
+      margin-left: 0px;
 
       > img {
         width: 60%;
+        margin-left: 7rem;
       }
 
       > p {
         font-family: "Roboto", sans-serif;
         margin: 0;
-        width: 75%;
-        font-size: 1.2rem;
+        width: 100%;
+        font-size: 1.7rem;
         color: #636363;
       }
 
       > .footerlinks {
         margin-top: 1rem;
+        text-align: center;
 
         > a {
           margin: 0.5rem 1.2rem 0 0;
