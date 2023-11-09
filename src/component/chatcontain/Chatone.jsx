@@ -22,7 +22,6 @@ export default function ChatContainer({ currentChat, socket }) {
           setMessages(response.data);
         }
     };
-  
     fetchData(); 
   
   }, [currentChat]);
