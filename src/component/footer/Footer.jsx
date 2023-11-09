@@ -1,8 +1,8 @@
 import React from "react";
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { HiOutlineMail } from "react-icons/hi";
-import { ImLocation } from "react-icons/im";
+// import { BsFillTelephoneFill } from "react-icons/bs";
+// import { HiOutlineMail } from "react-icons/hi";
+// import { ImLocation } from "react-icons/im";
 import logo from "../../asset/mindwelllogo.svg"
 const Footer = () => {
   return (
